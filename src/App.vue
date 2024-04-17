@@ -25,6 +25,13 @@ export default {
 <template>
   <div class="container">
     <h1>{{ title }}</h1>
+
+    <div v-for="project in projects">
+      <ul>
+        <li><strong>Title: </strong>{{ project.name_project }}</li>
+        <li><strong>Description: </strong>{{ project.description }}</li>
+      </ul>
+    </div>
   </div>
 </template>
 
