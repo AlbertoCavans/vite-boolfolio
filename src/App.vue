@@ -1,25 +1,16 @@
 <script>
 /* import MyComponent from "./components/MyComponent.vue" */
-import axios from "axios";
-import { api, store } from "./store";
-
 import AppHeader from "./components/AppHeader.vue";
+import ProjectCard from "./components/ProjectCard.vue";
 
 export default {
   data() {
     return {
-      store,
       title: "Vite Boolfolio frontend",
     };
   },
 
-  components: { AppHeader },
-
-  created() {
-    axios.get(api.baseUrl + "projects").then((response) => {
-      store.projects = response.data.data;
-    });
-  },
+  components: { AppHeader, ProjectCard },
 
   // components: {
   // MyComponent,
@@ -32,12 +23,7 @@ export default {
   <div class="container">
     <h1>{{ title }}</h1>
 
-    <div v-for="project in store.projects">
-      <ul>
-        <li><strong>Title: </strong>{{ project.name_project }}</li>
-        <li><strong>Description: </strong>{{ project.description }}</li>
-      </ul>
-    </div>
+    <project-card />
   </div>
 </template>
 
