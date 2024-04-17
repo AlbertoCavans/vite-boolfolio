@@ -1,18 +1,23 @@
 <script>
 /* import MyComponent from "./components/MyComponent.vue" */
 import axios from "axios";
+import { api, store } from "./store";
+
+import AppHeader from "./components/AppHeader.vue";
 
 export default {
   data() {
     return {
+      store,
       title: "Vite Boolfolio frontend",
-      projects: [],
     };
   },
 
+  components: { AppHeader },
+
   created() {
-    axios.get("http://http://127.0.0.1:8000/api/projects").then((response) => {
-      this.projects = response.data.data;
+    axios.get(api.baseUrl + "projects").then((response) => {
+      store.projects = response.data.data;
     });
   },
 
@@ -23,10 +28,11 @@ export default {
 </script>
 
 <template>
+  <app-header />
   <div class="container">
     <h1>{{ title }}</h1>
 
-    <div v-for="project in projects">
+    <div v-for="project in store.projects">
       <ul>
         <li><strong>Title: </strong>{{ project.name_project }}</li>
         <li><strong>Description: </strong>{{ project.description }}</li>
