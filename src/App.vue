@@ -1,7 +1,7 @@
 <script>
 /* import MyComponent from "./components/MyComponent.vue" */
 import AppHeader from "./components/AppHeader.vue";
-import ProjectCard from "./components/ProjectCard.vue";
+import ProjectList from "./components/ProjectList.vue";
 
 export default {
   data() {
@@ -10,7 +10,7 @@ export default {
     };
   },
 
-  components: { AppHeader, ProjectCard },
+  components: { AppHeader, ProjectList },
 
   // components: {
   // MyComponent,
@@ -20,10 +20,10 @@ export default {
 
 <template>
   <app-header />
-  <div class="container">
+  <div class="container mt-5 pb-5">
     <h1>{{ title }}</h1>
 
-    <project-card />
+    <project-list />
   </div>
 </template>
 

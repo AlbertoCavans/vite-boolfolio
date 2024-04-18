@@ -5,8 +5,10 @@ export default {};
 </script>
 
 <template>
-  <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="#">Boolfolio</a>
+  <nav class="navbar bg-info">
+    <div class="container-fluid">
+      <a class="navbar-brand h2 m-2" href="#">Boolfolio</a>
+    </div>
   </nav>
 </template>
 
