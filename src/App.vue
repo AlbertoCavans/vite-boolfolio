@@ -1,7 +1,7 @@
 <script>
 /* import MyComponent from "./components/MyComponent.vue" */
 import AppHeader from "./components/AppHeader.vue";
-import ProjectList from "./components/ProjectList.vue";
+/* import ProjectList from "./components/ProjectList.vue"; */
 
 export default {
   data() {
@@ -10,7 +10,7 @@ export default {
     };
   },
 
-  components: { AppHeader, ProjectList },
+  components: { AppHeader /* ProjectList */ },
 
   // components: {
   // MyComponent,
@@ -23,7 +23,7 @@ export default {
   <div class="container mt-5 pb-5">
     <h1>{{ title }}</h1>
 
-    <project-list />
+    <router-view></router-view>
   </div>
 </template>
 
